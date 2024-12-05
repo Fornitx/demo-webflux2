@@ -6,10 +6,6 @@ import org.springframework.boot.test.context.ConfigDataApplicationContextInitial
 import org.springframework.boot.test.context.assertj.AssertableReactiveWebApplicationContext
 import org.springframework.boot.test.context.runner.ContextConsumer
 import org.springframework.boot.test.context.runner.ReactiveWebApplicationContextRunner
-import org.springframework.context.ApplicationContext
-import kotlin.collections.isNotEmpty
-import kotlin.collections.joinToString
-import kotlin.jvm.java
 
 abstract class AbstractContextTest : AbstractTest() {
     protected fun contextRunner(): ReactiveWebApplicationContextRunner {

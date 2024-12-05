@@ -1,6 +1,6 @@
 package com.example.demowebflux.metrics
 
-import com.example.demowebflux.constants.METER_PREFIX
+import com.example.demowebflux.constants.METRICS_PREFIX
 import io.micrometer.core.instrument.Counter
 import io.micrometer.core.instrument.Gauge
 import io.micrometer.core.instrument.MeterRegistry
@@ -26,8 +26,6 @@ class DemoMetrics(private val registry: MeterRegistry) {
     companion object {
         private val nameCache = ConcurrentHashMap<String, String>()
 
-        fun name(name: String): String = nameCache.computeIfAbsent(name) {
-            METER_PREFIX + "_" + name
-        }
+        fun name(name: String): String = nameCache.computeIfAbsent(name) { METRICS_PREFIX + name }
     }
 }

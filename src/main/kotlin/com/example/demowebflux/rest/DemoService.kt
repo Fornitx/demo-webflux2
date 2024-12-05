@@ -1,9 +1,13 @@
 package com.example.demowebflux.rest
 
-import com.example.demowebflux.properties.DemoProperties
-import org.springframework.stereotype.Service
+import com.example.demowebflux.properties.ServiceProperties
+import io.github.oshai.kotlinlogging.KotlinLogging
 
-@Service
-class DemoService(private val properties: DemoProperties) {
-    fun foo(str: String): String = str.repeat(properties.service.multiplier)
+private val log = KotlinLogging.logger {}
+
+class DemoService(private val properties: ServiceProperties) {
+    suspend fun foo(str: String): String {
+        log.info { "Service called with '$str'" }
+        return str.repeat(properties.multiplier)
+    }
 }

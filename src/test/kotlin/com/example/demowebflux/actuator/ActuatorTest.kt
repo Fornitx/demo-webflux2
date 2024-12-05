@@ -2,10 +2,8 @@ package com.example.demowebflux.actuator
 
 import com.example.demowebflux.AbstractTest
 import com.example.demowebflux.utils.tryPrettyPrint
-import com.fasterxml.jackson.databind.ObjectMapper
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.ValueSource
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.test.web.server.LocalManagementPort
 import org.springframework.web.client.RestClient

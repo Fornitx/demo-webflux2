@@ -13,20 +13,22 @@ class BasicContextTest : AbstractContextTest() {
     }
 
     @Test
-    fun testServiceMultiplier() {
+    fun testJakartaValidation() {
         contextRunner()
-            .withPropertyValues("demo.service.multiplier=-1")
+            .withPropertyValues("demo.validation.int-jakarta=-1")
             .runLogging { context ->
                 assertThat(context).hasFailed()
+                    .failure.rootCause().hasMessageContaining("validation.intJakarta")
             }
     }
 
     @Test
-    fun testClientMultiplier() {
+    fun testHibernateValidation() {
         contextRunner()
-            .withPropertyValues("demo.client.multiplier=-1")
+            .withPropertyValues("demo.validation.int-hibernate=-1")
             .runLogging { context ->
                 assertThat(context).hasFailed()
+                    .failure.rootCause().hasMessageContaining("validation.intHibernate")
             }
     }
 }

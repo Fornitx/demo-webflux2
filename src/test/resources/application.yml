@@ -55,7 +55,17 @@ springdoc:
     enabled: true
 
 demo:
-  service:
-    multiplier: 3
-  client:
-    multiplier: 1
+  validation:
+    int-jakarta: 1
+    int-hibernate: 1
+  rest:
+    enabled: true
+    service:
+      multiplier: 3
+    client:
+      url: UNDEFINED
+      enable-metrics: true
+      response-timeout: 2s
+      connection-timeout: 2s
+      read-timeout: 2s
+      write-timeout: 3s
